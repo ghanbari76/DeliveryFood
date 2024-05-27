@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowSmRightIcon } from "@heroicons/react/outline";
-import { mealData } from "../data/data.js";
+import { categories, mealData } from "../data/data.js";
 
 const Meal = () => {
+    const [foods, setFoods ] = useState(mealData);
+    const fillterCategory = (categoriy) => {
+        setFoods(
+            mealData.filter((item) => {
+                return item.category === categoriy
+            })
+        )
+    }
+
     return (
         <div className='max-w-[1520px] m-auto px-4'>
             <h1 className='text-orange-500 font-bold text-2xl text-center py-2'>
                 Our Meal
             </h1> 
+            <div className='flex flex-col lg:flex-row justify-center'>
+                <div className='flex justify-center md:justify-center'>
+                    <button
+                        onClick={() => setFoods(mealData)}
+                        className='m-1 border-orange-700 text-white hover:bg-white bg-orange-700 duration-300 hover:text-orange-700 hover:borderora700'>ALl</button>
+                    <button
+                        onClick={() => fillterCategory("pizza")}
+                        className='m-1 border-orange-700 text-white hover:bg-white bg-orange-700 duration-300 hover:text-orange-700 hover:borderora700'>Pizza</button>
+                    <button
+                        onClick={() => fillterCategory("chicken")}
+                        className='m-1 border-orange-700 text-white hover:bg-white bg-orange-700 duration-300 hover:text-orange-700 hover:borderora700'>Chicken</button>
+                    <button
+                        onClick={() => fillterCategory("salad")}
+                        className='m-1 border-orange-700 text-white hover:bg-white bg-orange-700 duration-300 hover:text-orange-700 hover:borderora700'>Salad</button>
+                </div>
+            </div>
             <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-6 py-4'>
                 {
-                    mealData.map((item) => (
+                    foods.map((item) => (
                         <div key={item.id} className='border-bobe hover:scale-105 duration-500'>
                             <img
                                 src={item.image} 
