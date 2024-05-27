@@ -70,7 +70,7 @@ export const topPicks = [
 
 export const mealData = [
   {
-    id: 5,
+    id: 4,
     name: 'cheeseless pizza',
     category: 'pizza',
     image:
@@ -78,7 +78,7 @@ export const mealData = [
     price: '$200',
   },
   {
-    id: 6,
+    id: 5,
     name: 'Supreme Pizza',
     category: 'pizza',
     image:
@@ -86,7 +86,7 @@ export const mealData = [
     price: '$300',
   },
   {
-    id: 7,
+    id: 6,
     name: 'pepperoni pizza',
     category: 'pizza',
     image:
@@ -94,7 +94,7 @@ export const mealData = [
     price: '$100',
   },
   {
-    id: 8,
+    id: 7,
     name: 'Cheese Pizza',
     category: 'pizza',
     image:
